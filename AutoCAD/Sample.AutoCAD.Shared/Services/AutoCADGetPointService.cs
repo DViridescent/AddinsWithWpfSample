@@ -12,7 +12,7 @@ using Sample.AutoCAD.Utils;
 using Sample.Core.Interfaces;
 using Sample.Geometry;
 
-namespace Sample.AutoCAD.Service
+namespace Sample.AutoCAD.Services
 {
     internal class AutoCADGetPointService : IGetPointService
     {

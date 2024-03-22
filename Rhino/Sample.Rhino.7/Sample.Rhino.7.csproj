@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net48</TargetFramework>
+		<LangVersion>8.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<RootNamespace>Sample.Rhino</RootNamespace>
+		<TargetExt>.rhp</TargetExt>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="RhinoCommon" Version="7.0.20314.3001" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\UI\Sample.UI.WPF\Sample.UI.WPF.csproj" />
+	</ItemGroup>
+
+	<Import Project="..\Sample.Rhino.Shared\Sample.Rhino.Shared.projitems" Label="Shared" />
+
+</Project>

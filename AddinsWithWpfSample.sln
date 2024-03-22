@@ -33,6 +33,18 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.ActionResultTool", "
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Sample.AutoCAD.Shared", "AutoCAD\Sample.AutoCAD.Shared\Sample.AutoCAD.Shared.shproj", "{1A61BD9F-4AE8-4C58-9EBB-029331D9FE05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Stubs", "Core\Sample.Stubs\Sample.Stubs.csproj", "{8AA1E22E-4078-4E05-93E0-8532AC71507F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.AutoCAD.2018", "AutoCAD\Sample.AutoCAD.2018\Sample.AutoCAD.2018.csproj", "{C7E33639-34E4-43B2-AAB1-C0C3A6E3CB01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Rhino.7", "Rhino\Sample.Rhino.7\Sample.Rhino.7.csproj", "{532D0F1F-F4BE-42C1-933A-594E0179EC18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Revit.2021", "Revit\Sample.Revit.2021\Sample.Revit.2021.csproj", "{10132C64-E367-4DB0-953E-B4B1818D30E0}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Sample.Rhino.Shared", "Rhino\Sample.Rhino.Shared\Sample.Rhino.Shared.shproj", "{66F10404-5037-42DE-922C-4B8A5FF3CC54}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Sample.Revit.Shared", "Revit\Sample.Revit.Shared\Sample.Revit.Shared.shproj", "{98362782-303B-438A-BD60-609759514733}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +83,22 @@ Global
 		{2E49704D-CCAE-466F-B917-49AE0F16FC14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E49704D-CCAE-466F-B917-49AE0F16FC14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E49704D-CCAE-466F-B917-49AE0F16FC14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AA1E22E-4078-4E05-93E0-8532AC71507F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AA1E22E-4078-4E05-93E0-8532AC71507F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AA1E22E-4078-4E05-93E0-8532AC71507F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AA1E22E-4078-4E05-93E0-8532AC71507F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7E33639-34E4-43B2-AAB1-C0C3A6E3CB01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7E33639-34E4-43B2-AAB1-C0C3A6E3CB01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7E33639-34E4-43B2-AAB1-C0C3A6E3CB01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7E33639-34E4-43B2-AAB1-C0C3A6E3CB01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{532D0F1F-F4BE-42C1-933A-594E0179EC18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{532D0F1F-F4BE-42C1-933A-594E0179EC18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{532D0F1F-F4BE-42C1-933A-594E0179EC18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{532D0F1F-F4BE-42C1-933A-594E0179EC18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10132C64-E367-4DB0-953E-B4B1818D30E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10132C64-E367-4DB0-953E-B4B1818D30E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10132C64-E367-4DB0-953E-B4B1818D30E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10132C64-E367-4DB0-953E-B4B1818D30E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,13 +113,24 @@ Global
 		{A4E83150-7ACC-485E-8899-9852B138B6CE} = {645C8957-59E3-41B8-BC1B-7794E7416782}
 		{2E49704D-CCAE-466F-B917-49AE0F16FC14} = {645C8957-59E3-41B8-BC1B-7794E7416782}
 		{1A61BD9F-4AE8-4C58-9EBB-029331D9FE05} = {8C5A1BB7-582D-4463-8DD6-62CE2B93DE1D}
+		{8AA1E22E-4078-4E05-93E0-8532AC71507F} = {645C8957-59E3-41B8-BC1B-7794E7416782}
+		{C7E33639-34E4-43B2-AAB1-C0C3A6E3CB01} = {8C5A1BB7-582D-4463-8DD6-62CE2B93DE1D}
+		{532D0F1F-F4BE-42C1-933A-594E0179EC18} = {BDA72BE0-C6DA-4C45-AA19-E573B93D6C7D}
+		{10132C64-E367-4DB0-953E-B4B1818D30E0} = {6205B68A-38D5-4D47-8775-33CC2BC58898}
+		{66F10404-5037-42DE-922C-4B8A5FF3CC54} = {BDA72BE0-C6DA-4C45-AA19-E573B93D6C7D}
+		{98362782-303B-438A-BD60-609759514733} = {6205B68A-38D5-4D47-8775-33CC2BC58898}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B505A515-2D1E-4783-AFB7-EFA5AC01B2ED}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Revit\Sample.Revit.Shared\Sample.Revit.Shared.projitems*{10132c64-e367-4db0-953e-b4b1818d30e0}*SharedItemsImports = 5
 		AutoCAD\Sample.AutoCAD.Shared\Sample.AutoCAD.Shared.projitems*{1a61bd9f-4ae8-4c58-9ebb-029331d9fe05}*SharedItemsImports = 13
 		AutoCAD\Sample.AutoCAD.Shared\Sample.AutoCAD.Shared.projitems*{4ffacb3c-7e67-402a-839a-670b21830c5d}*SharedItemsImports = 5
+		Rhino\Sample.Rhino.Shared\Sample.Rhino.Shared.projitems*{532d0f1f-f4be-42c1-933a-594e0179ec18}*SharedItemsImports = 5
+		Rhino\Sample.Rhino.Shared\Sample.Rhino.Shared.projitems*{66f10404-5037-42de-922c-4b8a5ff3cc54}*SharedItemsImports = 13
+		Revit\Sample.Revit.Shared\Sample.Revit.Shared.projitems*{98362782-303b-438a-bd60-609759514733}*SharedItemsImports = 13
 		AutoCAD\Sample.AutoCAD.Shared\Sample.AutoCAD.Shared.projitems*{c4800c9a-071d-4274-a308-376c9690ab88}*SharedItemsImports = 5
+		AutoCAD\Sample.AutoCAD.Shared\Sample.AutoCAD.Shared.projitems*{c7e33639-34e4-43b2-aab1-c0c3a6e3cb01}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal

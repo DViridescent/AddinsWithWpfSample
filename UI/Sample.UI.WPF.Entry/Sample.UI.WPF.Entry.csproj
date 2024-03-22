@@ -9,6 +9,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\..\Core\Sample.Stubs\Sample.Stubs.csproj" />
 	  <ProjectReference Include="..\Sample.UI.WPF\Sample.UI.WPF.csproj" />
 	</ItemGroup>
 

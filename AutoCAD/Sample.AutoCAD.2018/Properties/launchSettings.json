@@ -2,7 +2,7 @@
   "profiles": {
     "Set Your CAD Path": {
       "commandName": "Executable",
-      "executablePath": "E:\\Autodesk\\AutoCAD 2022\\acad.exe"
+      "executablePath": "C:\\SoftWare\\CAD\\AutoCAD 2018\\acad.exe"
     }
   }
 }

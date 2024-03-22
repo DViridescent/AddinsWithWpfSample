@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Set Your Rhino Path": {
+      "commandName": "Executable",
+      "executablePath": "C:\\SoftWare\\Rhino 7\\System\\Rhino.exe"
+    }
+  }
+}

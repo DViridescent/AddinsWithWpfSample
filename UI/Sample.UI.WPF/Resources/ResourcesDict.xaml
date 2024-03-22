@@ -62,6 +62,7 @@
     <!--  TextBlock  -->
     <!--  默认字  -->
     <Style x:Key="SampleStandardText" TargetType="{x:Type TextBlock}">
+        <Setter Property="TextWrapping" Value="Wrap" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Margin" Value="0,3" />
     </Style>
@@ -70,7 +71,7 @@
         x:Key="SampleImportantText"
         BasedOn="{StaticResource SampleStandardText}"
         TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground" Value="{StaticResource MaterialDesign.Brush.Primary}" />
+        <Setter Property="Foreground" Value="{StaticResource MaterialDesign.Brush.Secondary}" />
     </Style>
 
     <Style
@@ -116,7 +117,7 @@
         x:Key="SampleImportantSmallText"
         BasedOn="{StaticResource SampleSmallText}"
         TargetType="{x:Type TextBlock}">
-        <Setter Property="Foreground" Value="{StaticResource MaterialDesign.Brush.Primary}" />
+        <Setter Property="Foreground" Value="{StaticResource MaterialDesign.Brush.Secondary}" />
     </Style>
 
     <Style

@@ -3,11 +3,37 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dvm="clr-namespace:Sample.UI.ViewModels.Design;assembly=Sample.UI"
     xmlns:local="clr-namespace:Sample.UI.WPF.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DataContext="{d:DesignInstance dvm:HomePageDesignViewModel,
+                                     IsDesignTimeCreatable=True}"
     d:DesignHeight="750"
     d:DesignWidth="300"
     mc:Ignorable="d">
+    <!--
+        1. 设计器的预览问题
+        
+        有些值在实际程序中只有运行时才会计算出来，为了方便设计，可以添加设计用的对象，见上d:DataContext
+        ...
+        
+        2. UserControl的资源问题
+        
+        在二开环境中，WPF的FrameworkElement对象无法从Application.Resources中获取程序级定义的资源
+        所以需要在每个UserControl中定义自己的资源
+        
+        2.1. 法一：这里没有直接使用UserControl，而是使用了自定义的UserControlWithResources作为基类
+        在基类构造函数中，合并了需要的资源字典（见UserControlWithResources.cs)
+        
+        2.2. 法二：在UserControl中定义自己的资源字典，如下
+    -->
+    <!--<UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Sample.UI.WPF;component/Resources/ResourcesDict.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>-->
 
     <Grid>
         <Grid.RowDefinitions>
@@ -19,7 +45,7 @@
         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
             <StackPanel>
                 <Separator />
-                <TextBlock Style="{StaticResource SampleBigBoldText}">1. 命令和属性绑定</TextBlock>
+                <TextBlock Style="{StaticResource SampleBigBoldText}">命令和属性绑定</TextBlock>
                 <TextBlock
                     HorizontalAlignment="Center"
                     Style="{StaticResource SampleStandardText}"
@@ -27,17 +53,34 @@
                 <Button Command="{Binding ResetCounterCommand}" Style="{StaticResource SampleImportantButton}">重置计数器</Button>
                 <Separator />
 
-                <TextBlock Style="{StaticResource SampleBigBoldText}">2. 使用服务</TextBlock>
-                <TextBlock
-                    HorizontalAlignment="Center"
-                    Style="{StaticResource SampleStandardText}"
-                    Text="{Binding CurrentTime, StringFormat={}查询到当前时间：{0:HH点mm分ss秒}}" />
-                <Button Command="{Binding QueryTimeCommand}" Style="{StaticResource SampleImportantButton}">查询时间</Button>
-                <Separator />
-                <TextBlock Style="{StaticResource SampleBigBoldText}">3. 页面切换</TextBlock>
+                <TextBlock Style="{StaticResource SampleBigBoldText}">页面切换</TextBlock>
                 <Button Command="{Binding SwitchToSubPage1Command}" Style="{StaticResource SampleImportantButton}">切换到子页面1</Button>
                 <Separator />
 
+                <TextBlock Style="{StaticResource SampleBigBoldText}">使用服务</TextBlock>
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    Style="{StaticResource SampleStandardText}"
+                    Text="{Binding CurrentTime, StringFormat={}查询到当前时间：{0:HH点mm分ss秒}}"
+                    Visibility="{Binding CurrentTime, Converter={StaticResource NullableToVisibilityConverter}}" />
+                <!--  NullableToVisibilityConverter是MaterialDesign提供的Converter之一，空值时不显示  -->
+                <Button Command="{Binding QueryTimeCommand}" Style="{StaticResource SampleImportantButton}">查询时间</Button>
+                <Separator />
+
+                <TextBlock Style="{StaticResource SampleBigBoldText}">使用插件实现的服务</TextBlock>
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    Style="{StaticResource SampleStandardText}"
+                    Text="{Binding Point, StringFormat={}你选择的点是:{0}}"
+                    Visibility="{Binding Point, Converter={StaticResource NullableToVisibilityConverter}}" />
+                <!--  重写了Point类的ToString方法  -->
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    Style="{StaticResource SampleImportantText}"
+                    Text="{Binding GetPointErrorMessage}"
+                    Visibility="{Binding GetPointErrorMessage, Converter={StaticResource StringIsEmptyVisibilityConverter}}" />
+                <Button Command="{Binding GetPointCommand}" Style="{StaticResource SampleImportantButton}">选择一个点</Button>
+                <Separator />
             </StackPanel>
         </ScrollViewer>
 

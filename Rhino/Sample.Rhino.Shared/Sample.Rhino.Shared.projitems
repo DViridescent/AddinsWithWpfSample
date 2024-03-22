@@ -3,18 +3,24 @@
   <PropertyGroup>
     <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
     <HasSharedItems>true</HasSharedItems>
-    <SharedGUID>1a61bd9f-4ae8-4c58-9ebb-029331d9fe05</SharedGUID>
+    <SharedGUID>66f10404-5037-42de-922c-4b8a5ff3cc54</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>Sample.AutoCAD</Import_RootNamespace>
+    <Import_RootNamespace>Sample.Rhino</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Entry\App.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Entry\CommandHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Entry\Commands.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Services\AutoCADGetPointService.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)UI\CustomPaletteSet.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Utils\ContextUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\RhinoGetPointService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Utils\Extensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)UI\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 </Project>

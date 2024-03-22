@@ -5,11 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
-using Sample.UI.ViewModels;
-using Sample.UI.WPF;
+
 using Sample.Core;
+using Sample.Stubs;
 using Sample.UI.Interfaces;
+using Sample.UI.WPF;
 using Sample.UI.WPF.Views;
+using Sample.UI.ViewModels;
 
 namespace SampleUI.WPF.Entry
 {
@@ -61,6 +63,7 @@ namespace SampleUI.WPF.Entry
         {
             ServiceProvider = new ServiceCollection()
                 .AddSampleAllServices()
+                .AddSampleStubServices()
                 .AddSingleton<MainWindow>()
                 .BuildServiceProvider();
 

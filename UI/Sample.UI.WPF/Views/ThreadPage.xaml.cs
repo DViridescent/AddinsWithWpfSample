@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -17,15 +16,13 @@ using System.Windows.Shapes;
 namespace Sample.UI.WPF.Views
 {
     /// <summary>
-    /// MainControl.xaml 的交互逻辑
+    /// ThreadPage.xaml 的交互逻辑
     /// </summary>
-    public partial class MainControl : UserControlWithResources
+    public partial class ThreadPage : UserControlWithResources
     {
-        public static MainControl Instance { get; private set; }
-        public MainControl()
+        public ThreadPage()
         {
             InitializeComponent();
-            Instance = this;
         }
     }
 }
