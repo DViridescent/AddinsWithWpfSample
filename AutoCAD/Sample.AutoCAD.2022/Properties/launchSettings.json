@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Start CAD On Wzw's PC": {
+      "commandName": "Executable",
+      "executablePath": "E:\\Autodesk\\AutoCAD 2022\\acad.exe"
+    }
+  }
+}

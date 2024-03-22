@@ -1,0 +1,167 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" />
+        <materialDesign:CustomColorTheme
+            BaseTheme="Light"
+            PrimaryColor="#5A7785"
+            SecondaryColor="#CD4319" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--  Button  -->
+    <Style
+        x:Key="SampleStandardButton"
+        BasedOn="{StaticResource MaterialDesignOutlinedDarkButton}"
+        TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="4" />
+    </Style>
+
+    <Style
+        x:Key="SampleImportantButton"
+        BasedOn="{StaticResource MaterialDesignFlatDarkBgButton}"
+        TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="4" />
+    </Style>
+
+    <Style
+        x:Key="SampleDangerousButton"
+        BasedOn="{StaticResource MaterialDesignFlatSecondaryMidBgButton}"
+        TargetType="{x:Type Button}">
+        <Setter Property="Margin" Value="4" />
+    </Style>
+
+    <Style
+        x:Key="SampleSmallStandardButton"
+        BasedOn="{StaticResource SampleStandardButton}"
+        TargetType="{x:Type Button}">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Padding" Value="12,0" />
+        <Setter Property="Height" Value="20" />
+    </Style>
+
+    <Style
+        x:Key="SampleSmallImportantButton"
+        BasedOn="{StaticResource SampleImportantButton}"
+        TargetType="{x:Type Button}">
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="Padding" Value="12,0" />
+        <Setter Property="Height" Value="20" />
+    </Style>
+
+    <Style
+        x:Key="SampleIconButton"
+        BasedOn="{StaticResource MaterialDesignIconButton}"
+        TargetType="{x:Type Button}">
+        <Setter Property="Foreground" Value="{StaticResource MaterialDesign.Brush.Primary.Dark}" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="Width" Value="30" />
+    </Style>
+
+    <!--  TextBlock  -->
+    <!--  默认字  -->
+    <Style x:Key="SampleStandardText" TargetType="{x:Type TextBlock}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0,3" />
+    </Style>
+
+    <Style
+        x:Key="SampleImportantText"
+        BasedOn="{StaticResource SampleStandardText}"
+        TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource MaterialDesign.Brush.Primary}" />
+    </Style>
+
+    <Style
+        x:Key="SampleUnimportantText"
+        BasedOn="{StaticResource SampleStandardText}"
+        TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource MaterialDesign.Brush.Primary.Light}" />
+    </Style>
+
+    <Style
+        x:Key="SampleWarpContentText"
+        BasedOn="{StaticResource SampleStandardText}"
+        TargetType="{x:Type TextBlock}">
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+    </Style>
+
+    <!--  大字  -->
+    <Style
+        x:Key="SampleBigText"
+        BasedOn="{StaticResource SampleStandardText}"
+        TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Margin" Value="0,5" />
+    </Style>
+
+    <Style
+        x:Key="SampleBigBoldText"
+        BasedOn="{StaticResource SampleBigText}"
+        TargetType="{x:Type TextBlock}">
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <!--  小字  -->
+    <Style
+        x:Key="SampleSmallText"
+        BasedOn="{StaticResource SampleStandardText}"
+        TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="10" />
+    </Style>
+
+    <Style
+        x:Key="SampleImportantSmallText"
+        BasedOn="{StaticResource SampleSmallText}"
+        TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource MaterialDesign.Brush.Primary}" />
+    </Style>
+
+    <Style
+        x:Key="SampleUnimportantSmallText"
+        BasedOn="{StaticResource SampleSmallText}"
+        TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource MaterialDesign.Brush.Primary.Light}" />
+    </Style>
+
+
+    <!--  标题字  -->
+    <Style
+        x:Key="SampleHeaderText"
+        BasedOn="{StaticResource SampleBigText}"
+        TargetType="{x:Type TextBlock}">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{StaticResource MaterialDesign.Brush.Primary}" />
+    </Style>
+
+
+    <!--  ↓↓  样式需要根据项目情况自定义  ↓↓  -->
+    <!--  TextBox  -->
+    <Style
+        x:Key="SampleOutlinedTextBox"
+        BasedOn="{StaticResource MaterialDesignOutlinedTextBox}"
+        TargetType="{x:Type TextBox}">
+        <Setter Property="Margin" Value="0,4,0,20" />
+        <Setter Property="AcceptsReturn" Value="True" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="Padding" Value="4" />
+        <Setter Property="materialDesign:HintAssist.IsFloating" Value="False" />
+    </Style>
+
+    <!--  TreeView  -->
+
+    <Style
+        x:Key="SampleTreeViewContainer"
+        BasedOn="{StaticResource MaterialDesignTreeViewItem}"
+        TargetType="TreeViewItem">
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0,3" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="materialDesign:TreeViewAssist.ShowSelection" Value="False" />
+    </Style>
+
+</ResourceDictionary>

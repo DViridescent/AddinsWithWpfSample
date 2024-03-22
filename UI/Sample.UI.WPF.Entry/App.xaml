@@ -1,0 +1,14 @@
+﻿<Application
+    x:Class="SampleUI.WPF.Entry.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:SampleUI.WPF.Entry">
+    <!--  这些资源定义在Application中，在插件中获取不到，只是为了帮助VS的设计器找到资源将页面正确地预览出来  -->
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Sample.UI.WPF;component/Resources/ResourcesDict.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

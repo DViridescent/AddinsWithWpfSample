@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net48</TargetFramework>
+		<LangVersion>8.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<RootNamespace>Sample.AutoCAD</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="ModPlus.AutoCAD.API.2022" Version="2.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\UI\Sample.UI.WPF\Sample.UI.WPF.csproj" />
+	</ItemGroup>
+
+	<Import Project="..\Sample.AutoCAD.Shared\Sample.AutoCAD.Shared.projitems" Label="Shared" />
+
+</Project>
