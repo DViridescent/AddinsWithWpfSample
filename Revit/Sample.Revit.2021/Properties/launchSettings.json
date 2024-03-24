@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Set Your Revit Path": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Autodesk\\Revit 2021\\Revit.exe"
+    }
+  }
+}

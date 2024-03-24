@@ -67,6 +67,7 @@ namespace SampleUI.WPF.Entry
                 .AddSingleton<MainWindow>()
                 .BuildServiceProvider();
 
+            ServiceProvider.GetRequiredService<IUiExecutor>().InitializeWithDispatcher();
             ServiceProvider.GetRequiredService<MainWindow>().Show();
             ServiceProvider.GetRequiredService<INavigater>();
 

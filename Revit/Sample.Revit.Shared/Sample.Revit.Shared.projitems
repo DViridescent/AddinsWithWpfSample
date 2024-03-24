@@ -9,5 +9,20 @@
     <Import_RootNamespace>Sample.Revit</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)UI\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Entry\App.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entry\CmdAvailabilityViews.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entry\PaneProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Entry\ShowPanelCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\RevitGetPointService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\RevitDialog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utils\RevitEventRaiser.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)SampleRevit.addin">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
