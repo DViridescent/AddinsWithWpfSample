@@ -2,6 +2,9 @@
 
 namespace Sample.Geometry
 {
+    /// <summary>
+    /// 一个单纯的点（三维坐标）
+    /// </summary>
     public class Point
     {
         public double X { get; set; }

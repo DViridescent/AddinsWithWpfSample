@@ -11,7 +11,8 @@ namespace Sample.UI.ViewModels
 {
     internal partial class HomePageViewModel : ViewModelBase, IDefaultViewModel
     {
-        private ITimeService TimeService => _serviceProvider.GetRequiredService<ITimeService>();
+        //由于基类已经注入了ServiceProvider，所以可以直接使用
+        private ITimeService TimeService => _serviceProvider.GetRequiredService<ITimeService>(); 
         private IGetPointService GetPointService => _serviceProvider.GetRequiredService<IGetPointService>();
 
         public HomePageViewModel(IServiceProvider serviceProvider) : base(serviceProvider)
@@ -24,6 +25,7 @@ namespace Sample.UI.ViewModels
         {
             while (true)
             {
+                // 使用await不会导致脱离WPF的UI线程
                 await Task.Delay(1000);
                 Count++;
             }

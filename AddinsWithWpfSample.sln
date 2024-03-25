@@ -6,18 +6,36 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.Core", "Core\Sample.Core\Sample.Core.csproj", "{CDA875F4-FA9F-4495-95E4-8E949DFA3903}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{645C8957-59E3-41B8-BC1B-7794E7416782}"
+	ProjectSection(SolutionItems) = preProject
+		Core\README.md = Core\README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{9C3B7F04-04DB-419C-A5CE-5A54B5819A6D}"
+	ProjectSection(SolutionItems) = preProject
+		UI\README.md = UI\README.md
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.UI", "UI\Sample.UI\Sample.UI.csproj", "{8F7FDE9A-38F3-4C1A-A523-DA1742A7D21C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AutoCAD", "AutoCAD", "{8C5A1BB7-582D-4463-8DD6-62CE2B93DE1D}"
+	ProjectSection(SolutionItems) = preProject
+		AutoCAD\README.md = AutoCAD\README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Revit", "Revit", "{6205B68A-38D5-4D47-8775-33CC2BC58898}"
+	ProjectSection(SolutionItems) = preProject
+		Revit\README.md = Revit\README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rhino", "Rhino", "{BDA72BE0-C6DA-4C45-AA19-E573B93D6C7D}"
+	ProjectSection(SolutionItems) = preProject
+		Rhino\README.md = Rhino\README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DevTool", "DevTool", "{E70C4026-9C87-4B4A-8776-42E104BE64EF}"
+	ProjectSection(SolutionItems) = preProject
+		DevTool\README.md = DevTool\README.md
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.UI.WPF", "UI\Sample.UI.WPF\Sample.UI.WPF.csproj", "{18960793-02E6-4A74-87C0-E45222F1E479}"
 EndProject
@@ -33,17 +51,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.ActionResultTool", "
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Sample.AutoCAD.Shared", "AutoCAD\Sample.AutoCAD.Shared\Sample.AutoCAD.Shared.shproj", "{1A61BD9F-4AE8-4C58-9EBB-029331D9FE05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Stubs", "Core\Sample.Stubs\Sample.Stubs.csproj", "{8AA1E22E-4078-4E05-93E0-8532AC71507F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.Stubs", "Core\Sample.Stubs\Sample.Stubs.csproj", "{8AA1E22E-4078-4E05-93E0-8532AC71507F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.AutoCAD.2018", "AutoCAD\Sample.AutoCAD.2018\Sample.AutoCAD.2018.csproj", "{C7E33639-34E4-43B2-AAB1-C0C3A6E3CB01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.AutoCAD.2018", "AutoCAD\Sample.AutoCAD.2018\Sample.AutoCAD.2018.csproj", "{C7E33639-34E4-43B2-AAB1-C0C3A6E3CB01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Rhino.7", "Rhino\Sample.Rhino.7\Sample.Rhino.7.csproj", "{532D0F1F-F4BE-42C1-933A-594E0179EC18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.Rhino.7", "Rhino\Sample.Rhino.7\Sample.Rhino.7.csproj", "{532D0F1F-F4BE-42C1-933A-594E0179EC18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Revit.2021", "Revit\Sample.Revit.2021\Sample.Revit.2021.csproj", "{10132C64-E367-4DB0-953E-B4B1818D30E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.Revit.2021", "Revit\Sample.Revit.2021\Sample.Revit.2021.csproj", "{10132C64-E367-4DB0-953E-B4B1818D30E0}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Sample.Rhino.Shared", "Rhino\Sample.Rhino.Shared\Sample.Rhino.Shared.shproj", "{66F10404-5037-42DE-922C-4B8A5FF3CC54}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Sample.Revit.Shared", "Revit\Sample.Revit.Shared\Sample.Revit.Shared.shproj", "{98362782-303B-438A-BD60-609759514733}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{780C18D7-4722-453A-A70B-0336EED959FE}"
+	ProjectSection(SolutionItems) = preProject
+		Test\README.md = Test\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{3C0D878A-3E03-47C3-870A-1D0FF2DEA5CE}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

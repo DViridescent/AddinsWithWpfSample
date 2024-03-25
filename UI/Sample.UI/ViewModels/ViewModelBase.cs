@@ -14,6 +14,10 @@ namespace Sample.UI.ViewModels
         protected readonly IServiceProvider _serviceProvider;
         protected INavigater Navigater => _serviceProvider.GetRequiredService<INavigater>();
 
+        /// <summary>
+        /// 基类构造函数，注入<see cref="IServiceProvider"/>以后提供服务
+        /// </summary>
+        /// <param name="serviceProvider"></param>
         protected ViewModelBase(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;

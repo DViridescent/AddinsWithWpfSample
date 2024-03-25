@@ -49,6 +49,13 @@ namespace Sample.UI.WPF.Services
                 else throw new Exception($"未找到视图对象[{viewTypeName}]");
             }
         }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// <para>此处使用了反射来从ViewModel找到View，所以对命名空间和类命名有要求</para>
+        /// </summary>
+        /// <typeparam name="T"><inheritdoc/></typeparam>
+        /// <exception cref="Exception">切换页面失败时触发</exception>
         public void NavigateWithViewModel<T>() where T : ObservableObject
         {
             Type viewModelType = typeof(T);
