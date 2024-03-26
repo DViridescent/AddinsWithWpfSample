@@ -10,6 +10,9 @@ using System.Windows;
 
 namespace Sample.Revit.Entry
 {
+    /// <summary>
+    /// Sample停靠面板的提供者，注册到Revit以后，由Revit调用来获取<see cref="FrameworkElement"/>对象
+    /// </summary>
     internal class PaneProvider : IDockablePaneProvider
     {
         private class Creator : IFrameworkElementCreator
@@ -33,7 +36,7 @@ namespace Sample.Revit.Entry
         {
             // 使用Creator可以尽可能延后创建FrameworkElement的时间点（或许有某些好处）
             data.FrameworkElementCreator = new Creator(_serviceProvider);
-            data.FrameworkElement = null;
+            data.FrameworkElement = null; // 置空见该属性的注释说明
             data.InitialState = new DockablePaneState
             {
                 DockPosition = DockPosition.Tabbed,

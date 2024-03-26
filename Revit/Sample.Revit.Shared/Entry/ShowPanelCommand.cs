@@ -12,6 +12,9 @@ using System.Windows.Markup;
 
 namespace Sample.Revit.Entry
 {
+    /// <summary>
+    /// 这个命令只用于显示停靠面板
+    /// </summary>
     [Transaction(TransactionMode.Manual)]
     internal class ShowPanelCommand : IExternalCommand
     {
@@ -21,7 +24,7 @@ namespace Sample.Revit.Entry
             {
                 var uiApplication = commandData.Application;
                 RegisterPane(uiApplication);
-                var panel = uiApplication.GetDockablePane(PanelId);
+                var panel = uiApplication.GetDockablePane(PaneId);
                 panel.Show();
             }
             catch (Exception ex)
@@ -32,12 +35,14 @@ namespace Sample.Revit.Entry
             return Result.Succeeded;
         }
 
-
-        internal static DockablePaneId PanelId = new DockablePaneId(new Guid("D58CF5BA-84A6-22D3-70AB-EF9C7B33D5E1"));
+        /// <summary>
+        /// 每个Revit面板都有一个唯一的ID
+        /// </summary>
+        internal static DockablePaneId PaneId = new DockablePaneId(new Guid("D58CF5BA-84A6-22D3-70AB-EF9C7B33D5E1"));
         internal static void RegisterPane(UIApplication uiApplication)
         {
-            var registered = DockablePane.PaneIsRegistered(PanelId);
-            var created = DockablePane.PaneExists(PanelId);
+            var registered = DockablePane.PaneIsRegistered(PaneId);
+            var created = DockablePane.PaneExists(PaneId);
 
             if (registered && created)
             {
@@ -47,10 +52,10 @@ namespace Sample.Revit.Entry
             if (!registered)
             {
                 var paneProvider = App.ServiceProvider.GetRequiredService<PaneProvider>();
-                uiApplication.RegisterDockablePane(PanelId, "Sample", paneProvider);
+                uiApplication.RegisterDockablePane(PaneId, "Sample", paneProvider);
             }
 
-            created = DockablePane.PaneExists(PanelId);
+            created = DockablePane.PaneExists(PaneId);
 
             // 关于某种偶发的BUG的解决
             // https://github.com/specklesystems/speckle-sharp/issues/1469

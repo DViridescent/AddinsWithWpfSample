@@ -17,6 +17,7 @@ namespace Sample.Revit.Entry
         /// <returns></returns>
         public bool IsCommandAvailable(UIApplication applicationData, CategorySet selectedCategories)
         {
+            // 有活动文档的时候可以显示按钮
             return applicationData?.ActiveUIDocument?.Document?.IsValidObject ?? false;
         }
     }

@@ -27,8 +27,10 @@ namespace Sample.Revit.Entry
         public static UIApplication? UiApplication { get; private set; }
         public Result OnStartup(UIControlledApplication application)
         {
+            // 修改Revit的Dll加载机制，添加程序集解析事件
             AppDomain.CurrentDomain.AssemblyResolve += new ResolveEventHandler(OnAssemblyResolve);
 
+            // Revit初始化完成后的事件，在这个事件中进行插件的初始化
             application.ControlledApplication.ApplicationInitialized += ControlledApplication_ApplicationInitialized;
 
 
@@ -40,6 +42,7 @@ namespace Sample.Revit.Entry
             var buttonData = new PushButtonData(registTitle, buttonName, typeof(App).Assembly.Location, typeof(ShowPanelCommand).FullName)
             {
                 AvailabilityClassName = typeof(CmdAvailabilityViews).FullName
+                // 此处可以添加图标
             };
 
             try
@@ -93,8 +96,6 @@ namespace Sample.Revit.Entry
                 //    Process.Start(Constants.WebsiteUrl);
                 //}
             }
-
-
         }
 
         /// <summary>
@@ -120,6 +121,7 @@ namespace Sample.Revit.Entry
         {
             string folderPath = Path.GetDirectoryName(typeof(App).Assembly.Location);
 
+            // 目前只匹配程序集名称，不匹配版本号等信息，有需要的话需要进一步使用args的其他参数
             string name = new AssemblyName(args.Name).Name;
 
             // 注意程序集匹配逻辑

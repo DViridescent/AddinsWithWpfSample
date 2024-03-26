@@ -11,6 +11,11 @@ namespace Sample.UI
 {
     public static class Extensions
     {
+        /// <summary>
+        /// 注册ViewModel层的所有服务
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection AddSampleViewModelServices(this IServiceCollection services) => services
             //.AddSingleton<HomePageViewModel>()
             .AddSingleton<IDefaultViewModel, HomePageViewModel>()

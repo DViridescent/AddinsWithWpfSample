@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Sample.UI.Interfaces
 {
+    /// <summary>
+    /// 导航器，用于页面之间的切换
+    /// </summary>
     public interface INavigater
     {
         /// <summary>

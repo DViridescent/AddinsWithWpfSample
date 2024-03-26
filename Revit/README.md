@@ -14,3 +14,5 @@ Revit会自动识别某个指定路径下的 `.addin` 文件
 > Sets the references 'Copy Local' to False.
 
 但实测发现，这个包的DLL还是会被复制到输出目录，所以还是需要手动删除相关DLL（RevitAPI.dll, RevitAPIUI.dll 等等）。
+
+另，`SampleRevit.addin` 文件的属性已被修改，设置为会复制到输出目录，以便生成后复制到指定路径下。

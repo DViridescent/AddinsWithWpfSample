@@ -64,7 +64,7 @@ namespace SampleUI.WPF.Entry
             ServiceProvider = new ServiceCollection()
                 .AddSampleAllServices()
                 .AddSampleStubServices()
-                .AddSingleton<MainWindow>()
+                .AddSingleton<MainWindow>() // 额外注册一个窗口，用于显示MainControl
                 .BuildServiceProvider();
 
             ServiceProvider.GetRequiredService<IUiExecutor>().InitializeWithDispatcher();

@@ -12,6 +12,10 @@ using System.Windows;
 
 namespace Sample.UI.WPF.Services
 {
+    /// <summary>
+    /// 导航器，初始化时将会显示默认的页面
+    /// <para>内部使用了反射机制，注意View和ViewModel的命名</para>
+    /// </summary>
     internal class Navigater : INavigater
     {
         private readonly IServiceProvider _rootServiceProvider;

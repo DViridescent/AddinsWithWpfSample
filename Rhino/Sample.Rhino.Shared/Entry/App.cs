@@ -30,7 +30,9 @@ namespace Sample.Rhino.Entry
                 .AddSingleton<IGetPointService, RhinoGetPointService>()
                 .BuildServiceProvider();
 
+            // 初始化Executor
             ServiceProvider.GetRequiredService<IUiExecutor>().InitializeWithDispatcher();
+            // 初始化导航器
             ServiceProvider.GetRequiredService<INavigater>();
              
 

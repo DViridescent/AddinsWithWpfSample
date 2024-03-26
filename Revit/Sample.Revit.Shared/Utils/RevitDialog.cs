@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Sample.Revit.Utils
 {
+    /// <summary>
+    /// 封装的工具类，提供简单的Revit弹窗提示
+    /// </summary>
     internal static class RevitDialog
     {
         public static void Info(string message) => Show("信息", message);

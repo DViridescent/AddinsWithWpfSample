@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 
 namespace Sample.UI.Interfaces
 {
+    /// <summary>
+    /// 对于WPF等UI框架，在多线程场景中，需要在UI线程执行的操作，可以使用该接口
+    /// </summary>
     public interface IUiExecutor
     {
         /// <summary>

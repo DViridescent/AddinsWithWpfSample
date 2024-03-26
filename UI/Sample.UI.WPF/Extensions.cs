@@ -14,6 +14,11 @@ namespace Sample.UI.WPF
 {
     public static class Extensions
     {
+        /// <summary>
+        /// 注册Core、ViewModel、View层的所有服务
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection AddSampleAllServices(this IServiceCollection services) => services
             .AddSampleCoreServices()
             .AddSampleViewModelServices()
