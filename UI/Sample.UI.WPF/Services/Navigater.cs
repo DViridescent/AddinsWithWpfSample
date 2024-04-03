@@ -22,10 +22,14 @@ namespace Sample.UI.WPF.Services
         private readonly MainControl _mainControl;
         private readonly Dictionary<Type, FrameworkElement> _viewsCache = new Dictionary<Type, FrameworkElement>();
 
-        public Navigater(IServiceProvider serviceProvider, MainControl mainControl, IDefaultViewModel defaultViewModel)
+        public Navigater(IServiceProvider serviceProvider, MainControl mainControl)
         {
             _rootServiceProvider = serviceProvider;
             _mainControl = mainControl;
+        }
+
+        public Navigater(IServiceProvider serviceProvider, MainControl mainControl, IDefaultViewModel defaultViewModel) : this(serviceProvider,mainControl)
+        {
             NavigateWithViewModel(defaultViewModel);
         }
         private void NavigateWithViewModel(object viewModel)
@@ -58,17 +62,17 @@ namespace Sample.UI.WPF.Services
         /// <inheritdoc/>
         /// <para>此处使用了反射来从ViewModel找到View，所以对命名空间和类命名有要求</para>
         /// </summary>
-        /// <typeparam name="T"><inheritdoc/></typeparam>
+        /// <typeparam name="TViewModel"><inheritdoc/></typeparam>
         /// <exception cref="Exception">切换页面失败时触发</exception>
-        public void NavigateWithViewModel<T>() where T : ObservableObject
+        public void NavigateWithViewModel<TViewModel>() where TViewModel : ObservableObject
         {
-            Type viewModelType = typeof(T);
+            Type viewModelType = typeof(TViewModel);
 
             // 检查是否已缓存对应的View实例
             if (!_viewsCache.ContainsKey(viewModelType))
             {
                 // 如果没有缓存，则创建ViewModel的新实例，并尝试创建对应的View实例
-                T viewModel = _rootServiceProvider.GetRequiredService<T>();
+                TViewModel viewModel = _rootServiceProvider.GetRequiredService<TViewModel>();
                 // 这里假设View和ViewModel具有相同的名称规则，只是命名空间不同
                 string viewTypeName = viewModelType.FullName.Replace("ViewModels", "WPF.Views").Replace("ViewModel", "");
                 Type viewType = Type.GetType(viewTypeName);
