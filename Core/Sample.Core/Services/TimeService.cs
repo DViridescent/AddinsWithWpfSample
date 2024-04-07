@@ -1,14 +1,17 @@
-﻿using Sample.Core.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using System.Reflection;
+using Sample.Core.Interfaces;
 
 namespace Sample.Core.Services
 {
     public class TimeService : ITimeService
     {
-        public DateTime GetCurrentTime() => DateTime.Now;
+        const string magicNumber = "42";
+        private int A { get; set; }
+
+        public DateTime GetCurrentTime()
+        {
+            return DateTime.Now;
+        }
     }
 }

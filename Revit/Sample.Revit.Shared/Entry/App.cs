@@ -123,15 +123,25 @@ namespace Sample.Revit.Entry
         {
             string folderPath = Path.GetDirectoryName(typeof(App).Assembly.Location);
 
-            // 目前只匹配程序集名称，不匹配版本号等信息，有需要的话需要进一步使用args的其他参数
-            string name = new AssemblyName(args.Name).Name;
+            // 获取请求的程序集的完整名称
+            string requestingAssemblyName = args.RequestingAssembly != null
+                ? args.RequestingAssembly.FullName
+                : args.Name;
+            string name = new AssemblyName(requestingAssemblyName).Name;
 
             // 注意程序集匹配逻辑
             string assemblyPath = Path.Combine(folderPath, name + ".dll");
 
-            if (!File.Exists(assemblyPath)) return null!;
-            Assembly assembly = Assembly.LoadFrom(assemblyPath);
-            return assembly;
+            if (!File.Exists(assemblyPath)) return null;
+            Assembly myAssembly = Assembly.LoadFrom(assemblyPath);
+
+            // 检查加载的程序集的版本是否与请求的程序集的版本匹配
+            if (myAssembly.GetName().Version != new AssemblyName(requestingAssemblyName).Version)
+            {
+                return null;
+            }
+
+            return myAssembly;
         }
 
         public Result OnShutdown(UIControlledApplication application)
