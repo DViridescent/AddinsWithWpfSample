@@ -24,7 +24,7 @@ namespace Sample.AutoCAD.Entry
 {
     internal class App : IExtensionApplication
     {
-        public static IServiceProvider ServiceProvider { get; private set; }
+        public static IServiceProvider? ServiceProvider { get; private set; }
 
 
         public void Initialize()
@@ -64,7 +64,7 @@ namespace Sample.AutoCAD.Entry
             // 注意逻辑
             string assemblyPath = Path.Combine(folderPath, name + ".dll");
 
-            if (!File.Exists(assemblyPath)) return null;
+            if (!File.Exists(assemblyPath)) return null!;
             Assembly assembly = Assembly.LoadFrom(assemblyPath);
             return assembly;
         }

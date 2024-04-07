@@ -41,7 +41,7 @@ namespace Sample.Rhino.Services
             var getResult = getPoint.Get(); // 没有做异步包装，可以仿照AutoCAD的写法进行包装
             if (getResult == GetResult.Point)
             {
-               return getPoint.Point();
+                return await Task.FromResult(getPoint.Point());
             }
             else if (getResult == GetResult.Option)
             {

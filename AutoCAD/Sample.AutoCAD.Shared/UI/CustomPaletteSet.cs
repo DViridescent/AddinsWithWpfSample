@@ -23,9 +23,9 @@ namespace Sample.AutoCAD.UI
             Style = PaletteSetStyles.ShowAutoHideButton | PaletteSetStyles.ShowCloseButton | PaletteSetStyles.ShowPropertiesMenu;
             MinimumSize = new System.Drawing.Size(250, 150);
 
-            var view = App.ServiceProvider.GetRequiredService<MainControl>();
+            var view = App.ServiceProvider?.GetRequiredService<MainControl>() ?? throw new Exception("插件初始化失败");
 
-            
+
             AddVisual("SampleView", view);
 
             // 当没有 Document 实例时自动隐藏调色板

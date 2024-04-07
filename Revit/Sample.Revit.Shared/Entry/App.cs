@@ -18,10 +18,10 @@ namespace Sample.Revit.Entry
     public class App : IExternalApplication
     {
         private static IServiceProvider? serviceProvider;
-        public static IServiceProvider ServiceProvider 
-        { 
-            get => serviceProvider ?? throw new Exception("Revit未正确加载，Sample插件加载失败"); 
-            private set => serviceProvider = value; 
+        public static IServiceProvider ServiceProvider
+        {
+            get => serviceProvider ?? throw new Exception("Revit未正确加载，Sample插件加载失败");
+            private set => serviceProvider = value;
         }
 
         public static UIApplication? UiApplication { get; private set; }
@@ -83,7 +83,9 @@ namespace Sample.Revit.Entry
             catch (Exception ex)
             {
                 //Log.Error(ex, ex.Message);
+#pragma warning disable IDE0017 // 简化对象初始化
                 var td = new TaskDialog("无法加载Sample插件");
+#pragma warning restore IDE0017 // 简化对象初始化
                 td.MainContent = $"加载Sample插件时出现了某些错误：\n{ex.Message}";
 
                 // 可以选择提供web链接
@@ -127,7 +129,7 @@ namespace Sample.Revit.Entry
             // 注意程序集匹配逻辑
             string assemblyPath = Path.Combine(folderPath, name + ".dll");
 
-            if (!File.Exists(assemblyPath)) return null;
+            if (!File.Exists(assemblyPath)) return null!;
             Assembly assembly = Assembly.LoadFrom(assemblyPath);
             return assembly;
         }

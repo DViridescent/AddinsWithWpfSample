@@ -19,7 +19,7 @@ namespace Sample.AutoCAD.Utils
             var tcs = new TaskCompletionSource<T>();
 
             // 为了防止有可能从非CAD的线程中进行命令调用，使用以下方法将命令调用放入CAD的命令上下文中
-            Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.ExecuteInCommandContextAsync(async (obj) =>
+            Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.ExecuteInCommandContextAsync((obj) =>
             {
                 T result;
                 try
@@ -29,9 +29,10 @@ namespace Sample.AutoCAD.Utils
                 catch (Exception e)
                 {
                     tcs.SetException(e);
-                    return;
+                    return Task.CompletedTask;
                 }
                 tcs.SetResult(result);
+                return Task.CompletedTask;
             }, null);
             return tcs.Task;
         }

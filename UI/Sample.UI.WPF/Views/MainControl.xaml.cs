@@ -21,7 +21,7 @@ namespace Sample.UI.WPF.Views
     /// </summary>
     public partial class MainControl : UserControlWithResources
     {
-        public static MainControl Instance { get; private set; }
+        public static MainControl? Instance { get; private set; }
         public MainControl()
         {
             InitializeComponent();

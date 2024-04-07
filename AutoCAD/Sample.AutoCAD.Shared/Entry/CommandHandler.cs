@@ -13,7 +13,8 @@ namespace Sample.AutoCAD.Entry
     {
         public event EventHandler CanExecuteChanged = _canExecuteChanged;
 
-        private static void _canExecuteChanged(object o,EventArgs e) { }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Style", "IDE1006:命名样式", Justification = "<挂起>")]
+        private static void _canExecuteChanged(object o, EventArgs e) { }
 
         public bool CanExecute(object parameter)
         {
@@ -24,7 +25,7 @@ namespace Sample.AutoCAD.Entry
         {
             if (parameter is RibbonButton ribbonButton)
             {
-                Application.DocumentManager.MdiActiveDocument.SendStringToExecute( (string)ribbonButton.CommandParameter, true, false, true);
+                Application.DocumentManager.MdiActiveDocument.SendStringToExecute((string)ribbonButton.CommandParameter, true, false, true);
             }
             else
             {

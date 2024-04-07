@@ -6,15 +6,15 @@ namespace Sample.ActionResultTool
 {
     public class Response : IActionResponse
     {
-        public string Message { get; set; }
-        public ResponseError Error { get; set; }
+        public string Message { get; set; } = string.Empty;
+        public ResponseError Error { get; set; } = null!;
     }
 
     public class ResponseError
     {
         public int? Code { get; set; }
 
-        public string Message { get; set; }
+        public string Message { get; set; } = string.Empty;
 
     }
 }

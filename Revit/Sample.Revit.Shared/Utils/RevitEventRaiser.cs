@@ -16,7 +16,7 @@ namespace Sample.Revit.Utils
     {
         private class ExternalEventHandeler : IExternalEventHandler
         {
-            Queue<Action<UIApplication>> _actionQueue = new Queue<Action<UIApplication>>();
+            readonly Queue<Action<UIApplication>> _actionQueue = new Queue<Action<UIApplication>>();
             internal int ActionCount => _actionQueue.Count;
 
             public void Execute(UIApplication app)
