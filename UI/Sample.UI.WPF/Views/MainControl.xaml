@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Sample.UI.WPF.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Background="{StaticResource MaterialDesign.Brush.Background}"
+    Background="White"
     mc:Ignorable="d">
     <!--  使用ContentControl展示当前页面  -->
     <ContentControl x:Name="RootContentControl" />
