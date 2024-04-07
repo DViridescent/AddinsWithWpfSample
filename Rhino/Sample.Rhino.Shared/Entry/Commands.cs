@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Sample.UI.WPF.Views;
+using Sample.Rhino.UI;
 
 namespace Sample.Rhino.Entry
 {
@@ -14,7 +15,7 @@ namespace Sample.Rhino.Entry
 
         protected override Result RunCommand(RhinoDoc doc, RunMode mode)
         {
-            Panels.OpenPanel(typeof(MainControl).GUID);
+            Panels.OpenPanel(typeof(MainView).GUID);
             return Result.Success;
         }
     }
