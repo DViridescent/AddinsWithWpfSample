@@ -6,12 +6,6 @@ namespace Sample.Core.Services
 {
     public class TimeService : ITimeService
     {
-        const string magicNumber = "42";
-        private int A { get; set; }
-
-        public DateTime GetCurrentTime()
-        {
-            return DateTime.Now;
-        }
+        public DateTime GetCurrentTime() => DateTime.Now;
     }
 }
