@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Configuration;
-using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Microsoft.Extensions.DependencyInjection;
-
-using Sample.Core;
 using Sample.Stubs;
 using Sample.UI.Interfaces;
+
+
 using Sample.UI.WPF;
-using Sample.UI.WPF.Views;
-using Sample.UI.ViewModels;
 
 namespace SampleUI.WPF.Entry
 {
@@ -62,10 +58,10 @@ namespace SampleUI.WPF.Entry
         protected override void OnStartup(StartupEventArgs e)
         {
             ServiceProvider = new ServiceCollection()
-                .AddSampleAllServices()
-                .AddSampleStubServices()
-                .AddSingleton<MainWindow>() // 额外注册一个窗口，用于显示MainControl
-                .BuildServiceProvider();
+                 .AddSampleAllServices()
+                 .AddSampleStubServices()
+                 .AddSingleton<MainWindow>() // 额外注册一个窗口，用于显示MainControl
+                 .BuildServiceProvider();
 
             ServiceProvider.GetRequiredService<IUiExecutor>().InitializeWithDispatcher();
             ServiceProvider.GetRequiredService<MainWindow>().Show();

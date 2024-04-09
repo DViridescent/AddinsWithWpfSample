@@ -5,15 +5,12 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.Core", "Core\Sample.Core\Sample.Core.csproj", "{CDA875F4-FA9F-4495-95E4-8E949DFA3903}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{645C8957-59E3-41B8-BC1B-7794E7416782}"
-	ProjectSection(SolutionItems) = preProject
-		Core\README.md = Core\README.md
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{9C3B7F04-04DB-419C-A5CE-5A54B5819A6D}"
 	ProjectSection(SolutionItems) = preProject
 		UI\README.md = UI\README.md
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{645C8957-59E3-41B8-BC1B-7794E7416782}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.UI", "UI\Sample.UI\Sample.UI.csproj", "{8F7FDE9A-38F3-4C1A-A523-DA1742A7D21C}"
 EndProject
@@ -70,8 +67,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{780C18D7-4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{3C0D878A-3E03-47C3-870A-1D0FF2DEA5CE}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EditorconfigTest", "Test\EditorconfigTest\EditorconfigTest.csproj", "{00D429FD-F59A-4D1B-8235-30ECAB27E873}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -127,6 +127,10 @@ Global
 		{10132C64-E367-4DB0-953E-B4B1818D30E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10132C64-E367-4DB0-953E-B4B1818D30E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10132C64-E367-4DB0-953E-B4B1818D30E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00D429FD-F59A-4D1B-8235-30ECAB27E873}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00D429FD-F59A-4D1B-8235-30ECAB27E873}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00D429FD-F59A-4D1B-8235-30ECAB27E873}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00D429FD-F59A-4D1B-8235-30ECAB27E873}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -147,6 +151,7 @@ Global
 		{10132C64-E367-4DB0-953E-B4B1818D30E0} = {6205B68A-38D5-4D47-8775-33CC2BC58898}
 		{66F10404-5037-42DE-922C-4B8A5FF3CC54} = {BDA72BE0-C6DA-4C45-AA19-E573B93D6C7D}
 		{98362782-303B-438A-BD60-609759514733} = {6205B68A-38D5-4D47-8775-33CC2BC58898}
+		{00D429FD-F59A-4D1B-8235-30ECAB27E873} = {780C18D7-4722-453A-A70B-0336EED959FE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B505A515-2D1E-4783-AFB7-EFA5AC01B2ED}

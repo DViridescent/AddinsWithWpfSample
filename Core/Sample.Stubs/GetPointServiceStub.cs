@@ -1,8 +1,8 @@
-﻿using Sample.ActionResultTool;
+﻿using System;
+using System.Threading.Tasks;
+using Sample.ActionResultTool;
 using Sample.Core.Interfaces;
 using Sample.Geometry;
-using System;
-using System.Threading.Tasks;
 
 namespace Sample.Stubs
 {
