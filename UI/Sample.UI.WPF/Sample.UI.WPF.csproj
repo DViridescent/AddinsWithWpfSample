@@ -8,18 +8,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+		<PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Sample.UI\Sample.UI.csproj" />
+		<ProjectReference Include="..\Sample.UI\Sample.UI.csproj" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <Page Update="Resources\ResourcesDict.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	    <CopyToOutputDirectory></CopyToOutputDirectory>
-	  </Page>
-	</ItemGroup>
-
 </Project>
